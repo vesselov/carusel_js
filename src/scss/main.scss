@@ -1,0 +1,70 @@
+img
+  width: 100%
+body
+  background-color: #73bbcf
+.slider
+  position: relative
+  height: 200px
+  background-color: #FFBA73
+  margin: 150px auto
+  width: 600px
+  overflow: hidden
+  &-img
+    width: 1400px
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    transition: all ease-out .3s
+  &-item
+    width: 190px
+    margin: 0 5px
+    float: left
+    img
+      height: 127px
+  &-arrows
+    cursor: pointer
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)    
+    & div
+      &::before
+        content: ""
+        position: absolute
+        bottom: 10px
+        left: 50%
+        width: 50px
+        height: 20px
+    & :nth-child(1)
+      &:hover::before
+        transform: translateX(-140%)
+      &::before
+        transition: all 0.2s ease
+        transform: translateX(-120%)
+        background: url("https://image.ibb.co/k3fyxK/prev_arrow.png") center no-repeat
+    & :nth-child(2)
+      &:hover::before
+        transform: translateX(40%)
+      &::before
+        transition: all 0.2s ease
+        transform: translateX(20%)
+        background: url("https://image.ibb.co/m8de4z/next_arrow.png") center no-repeat
+  &-dots
+    display: inline-block
+    text-align: center
+    position: absolute
+    left: 5px
+    bottom: 5px
+.dot
+  opacity: 0.5
+  transition: all 0.3s ease
+  display: inline-block
+  margin: 0 2px
+  cursor: pointer
+  width: 10px
+  height: 10px
+  background-color: black
+  border-radius: 50%
+.active
+  opacity: 1
+  transform: scale(1.5)
